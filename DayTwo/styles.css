@@ -1,0 +1,32 @@
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100%;
+}
+
+.content {
+    width: 791px;
+    margin: auto;
+    padding: 20px 20px 90px 30px;
+    text-align: justify;
+}
+
+.footer {
+    position: relative;
+    box-sizing: border-box;
+    width: 830px;
+    margin: -70px auto 0;
+    height: 70px;
+    background-color: #87CBDD;
+    border-radius: 3px 3px 0 0;
+}
+
+.copyright {
+    float: right;
+    padding-right: 45px;
+    padding-top: 23px;
+}
