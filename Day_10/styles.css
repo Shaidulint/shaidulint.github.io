@@ -1,0 +1,106 @@
+body {
+    margin: 0;
+}
+
+.intro-image {
+    position:relative;
+    width: 100%;
+    height: 400px;
+    background: url("Content/intro.jpg");
+}
+
+.column-container {
+    position: relative;
+    width: 960px;
+    margin: 0 50%;
+    left: -480px;
+    background: rgba(165, 141, 135, 0.95);
+    min-height: 600px;
+}
+
+.header-container {
+    width: 100%;
+    height: 90px;
+}
+
+header {
+    height: 100%;
+    max-height: 90px;
+    background: rgba(37, 37, 37, 1);
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+header nav {
+    height: 100%;
+}
+
+header.fixed {
+    position: fixed;
+    top: 0px;
+    width: 960px;
+    height: 60px;
+}
+
+header i {
+    position: relative;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    top: 20px;
+}
+
+header.fixed i {
+    top: -15px;
+    opacity: 0;
+}
+
+
+nav ul {
+    position: relative;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav li {
+    display: inline-block;
+    width: 90px;
+    height: 100%;
+    color: #FEFFED;
+    margin: 0 5px;
+}
+
+nav li:hover {
+    color: #78D984;
+}
+
+nav a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+nav a span {
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+    top: 20px;
+}
+
+header.fixed nav a span {
+    top: -15px;
+}
+
+.content {
+    padding: 30px 60px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 18px;
+}
+
