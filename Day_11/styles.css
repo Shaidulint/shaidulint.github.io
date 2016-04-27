@@ -1,0 +1,13 @@
+.container {
+    position: relative;
+    width: 1000px;
+    height: 600px;
+    margin: 100px 50%;
+    left: -500px;
+    border: 1px solid #aaa;
+}
+
+#cvs {
+    width: 100%;
+    height: 100%;
+}
