@@ -1,0 +1,51 @@
+.btn {
+    width: 40px;
+    height: 40px;
+    margin: 80px auto;
+    position: relative;
+    border: 1px solid rgba(0,0,0, 0.1);
+    box-sizing: border-box;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.line {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 2px;
+    background-color: #123;
+    -webkit-transition: 0.5s;
+    -moz-transition: 0.5s;
+    transition: 0.5s;
+}
+
+.line-one {
+    top: 9px;
+    left: 4px;
+}
+
+.line-two {
+    top: 19px;
+    left: 4px;
+}
+
+.line-three {
+    top: 29px;
+    left: 4px;
+}
+
+.btn.active .line-one {
+    top: 20px;
+    transform: rotate(315deg);
+}
+
+.btn.active .line-two {
+    left: 20px;
+    width: 0;
+}
+
+.btn.active .line-three {
+    top: 20px;
+    transform: rotate(-315deg);
+}

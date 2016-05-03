@@ -1,0 +1,161 @@
+.c-slack {
+    position:relative;
+    z-index: 100;
+    margin: 80px auto;
+    width: 96px;
+    height: 96px;
+    transform: rotate(-15deg);
+}
+
+.c-slack_dot {
+    display: block;
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    mix-blend-mode: multiply;
+}
+
+.c-slack_dot-a {
+    top: 0px;
+    left: 0px;
+    background-color: #3eb991;
+    animation: slack-animation-a 2s infinite;
+    transform: translateX(18px);
+}
+
+.c-slack_dot-b {
+    top: 0px;
+    right: 0px;
+    background-color: #6ecadc;
+    animation: slack-animation-b 2s infinite;
+    transform: translateY(18px);
+}
+
+.c-slack_dot-c {
+    bottom: 0px;
+    right: 0px;
+    background-color: #e9a820;
+    animation: slack-animation-c 2s infinite;
+    transform: translateX(-18px);
+}
+
+.c-slack_dot-d {
+    bottom: 0px;
+    left: 0px;
+    background-color: #e01563;
+    animation: slack-animation-d 2s infinite;
+    transform: translateY(-18px);
+}
+
+@keyframes slack-animation-a {
+    0% {
+        top: 0;
+        bottom: auto;
+        height: 18px;
+    }
+    33% {
+        top: 0;
+        bottom: auto;
+        height: 96px;
+    }
+    34% {
+        top: auto;
+        bottom: 0;
+        height: 96px;
+    }
+    66% {
+        top: auto;
+        bottom: 0;
+        height: 18px;
+    }
+    100% {
+        top: auto;
+        bottom: 78px;
+        height: 18px;
+    }
+}
+
+@keyframes slack-animation-b {
+    0% {
+        right: 0;
+        left: auto;
+        width: 18px;
+    }
+    33% {
+        right: 0;
+        left: auto;
+        width: 96px;
+    }
+    34% {
+        right: auto;
+        left: 0;
+        width: 96px;
+    }
+    66% {
+        right: auto;
+        left: 0;
+        width: 18px;
+    }
+    100% {
+        right: auto;
+        left: 78px;
+        width: 18px;
+    }
+}
+
+@keyframes slack-animation-c {
+    0% {
+        top: auto;
+        bottom: 0;
+        height: 18px;
+    }
+    33% {
+        top: auto;
+        bottom: 0;
+        height: 96px;
+    }
+    34% {
+        top: 0;
+        bottom:auto;
+        height:96px;
+    }
+    66% {
+        top: 0;
+        bottom: auto;
+        height: 18px;
+    }
+    100% {
+        top: 78px;
+        bottom:auto;
+        height: 18px;
+    }
+}
+
+@keyframes slack-animation-d {
+    0% {
+        left: 0;
+        right: auto;
+        width: 18px;
+    }
+    33% {
+        left: 0;
+        right: auto;
+        width: 96px;
+    }
+    34% {
+        left: auto;
+        right: 0;
+        width: 96px;
+    }
+    66% {
+        left: auto;
+        right: 0;
+        width: 18px;
+    }
+    100% {
+        left: auto;
+        right: 78px;
+        width: 18px;
+    }
+}
