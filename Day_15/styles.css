@@ -13,10 +13,14 @@ body {
     margin: 0 auto 30px;
     background: #F1F5F8;
     height: 100%;
-    padding: 0 6em 0 6em;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
     overflow: hidden;
     border-radius: 3px;
+}
+
+.content {
+    padding-left: 6em;
+    padding-right: 6em;
 }
 
 .img {
@@ -58,12 +62,10 @@ body {
 }
 
 .recommendations {
-    width: 960px;
+    width: 100%;
     background-color: #34495E;
     *zoom: 1;
     padding: 15px 6em;
-    margin-left: -6em;
-    margin-right: -6em;
     box-shadow: 0 0 5px rgba(0,0,0, 0.5);
 }
 
@@ -82,6 +84,7 @@ body {
     background-color: #EB5255;
     border-right: 1px solid #34495E;
     padding: 10px 10px;
+    overflow: hidden;
 }
 
 .recommendations .recommendation-cell:nth-child(2) {
@@ -138,9 +141,7 @@ body {
 }
 
 header {
-    width: 960px;
-    margin-left: -6em;
-    margin-right: -6em;
+    width: 100%;
     background-color: #EB5255;
     height: 50px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
@@ -333,18 +334,11 @@ aside.menu ul li:hover {
 @media screen and (max-width:980px) {
     .column-container {
         width: 100%;
-        padding-top: 80px;
-        padding-left: 2em;
-        padding-right: 2em;
         min-width: 450px;
     }
     
     header {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        top: 0;
-        margin:0;
+
         padding-left: 60px;
         padding-right: 2em;
         min-width: 450px;
@@ -369,4 +363,62 @@ aside.menu ul li:hover {
         border-radius: 0;
         margin-left: 0;
     }
+    
+    .img {
+        width: 100%;
+    }
+    
+    .content {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+}
+
+@media screen and (max-width:980px) {
+    .recommendations {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    
+    .recommendations .recommendation-cell {
+        float: none;
+        width: 100%;
+        border-right: 0;
+        border-bottom: 1px solid #34495E;
+    }
+    .recommendations .recommendation-cell:nth-child(2) {
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .recommendations .recommendation-cell:last-child {
+        border-radius: 0 0 20px 20px;
+    }
+    
+    .recommendations .recommendation-cell:nth-child(2) .preview img {
+        border-radius: 15px 15px 0 0;
+    }
+
+    .recommendations .recommendation-cell:last-child .preview img  {
+        border-radius: 0;
+    }
+    
+    .preview {
+        height: 180px;
+    }
+    
+    .description {
+        height: 45px;
+        overflow: hidden;
+    }
+    
+    .footer-description {
+        margin-right: 200px;
+        font-size: 2vw;
+    }
+    
+    .copyright {
+        position: absolute;
+        right: 2em;
+    }
+
 }
