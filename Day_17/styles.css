@@ -1,0 +1,26 @@
+ul li {
+    position: relative;
+    height: 1.5em;
+}
+
+
+ul li:after{
+    content: attr(data-comment);
+    display: block;
+    position: absolute;
+    left: 0;
+    top: -0.5em;
+    background-color: #FFF;
+    -webkit-transform: perspective(300px) rotateX(90deg);
+    transform: perspective(300px) rotateX(90deg);
+    -webkit-transition: 1s;
+    -moz-transition: 1s;
+    transition: 1s;
+}
+
+ul li:hover:after {
+    color: red;
+    top: 0;
+    -webkit-transform: perspective(300px) rotateX(0deg);
+    transform: perspective(300px) rotateX(0deg);
+}

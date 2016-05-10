@@ -1,0 +1,90 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: #0F3157;
+}
+
+.container {
+    width: 240px;
+    margin: 100px auto;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 12px;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14pt;
+    font-weight: 800;
+    color: #0F3157;
+}
+
+ul.rows {
+    padding: 0;
+    margin: 0;
+}
+
+ul.rows li {
+    display: block;
+    height: 78px;
+    padding-top: 27px;
+    padding-left: 20px;
+    margin-bottom: 4px;
+}
+
+ul.rows li:hover {
+    padding-top: 25px;
+    padding-left: 18px;
+    border: 2px dashed #CED9DF;
+    border-radius: 10px;
+}
+
+.pin {
+    position: relative;
+    float: right;
+    margin-right: 30px;
+    margin-top: 5px;
+    width: 14px;
+    height: 14px;
+    border: 4px solid #CED9DF;
+    border-radius: 50%;
+    box-shadow: 0 0 4px rgba(0,0,0, 0.10);
+    z-index: 0;
+}
+
+.pin.active {
+    z-index: 2;
+    box-shadow: none;
+}
+
+ul.rows li:hover .pin {
+    margin-right: 28px;
+}
+
+#submenu {
+    display: none;
+    position: absolute;
+    background: #245687;
+    color: #FFF;
+    font-size: 10pt;
+    border-radius: 6px;
+    z-index: 1;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+ul.submenu-list {
+    margin: 0;
+    padding: 25px 10px 10px 10px;
+}
+
+ul.submenu-list li {
+    display: block;
+    line-height: 1.8em;
+    width: auto;
+    cursor: default;
+}
+
+ul.submenu-list li:hover {
+    color: #13AEEE;
+}
