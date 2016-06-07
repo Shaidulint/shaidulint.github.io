@@ -1,0 +1,165 @@
+/*   OVERALL   */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    background-color: #EBECE7;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+    height: 70px;
+
+}
+
+footer {
+    height: 40px;
+    
+}
+
+main {
+    height: calc(100% - 110px);
+    margin: 0 30px;
+}
+
+section {
+    position: relative;
+    float: left;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 2px;
+}
+
+section.small-1 {
+    width: calc(25% - 20px);
+    height: calc(34% - 20px);
+}
+
+section.small-2 {
+    width: calc(50% - 20px);
+    height: calc(34% - 20px);
+}
+
+section.big-1 {
+    width: calc(25% - 20px);
+    height: calc(66% - 20px);
+}
+
+section.big-2 {
+    width: calc(50% - 20px);
+    height: calc(66% - 20px);
+}
+
+.summary {
+    background: #51B5F3;
+    color: #FFF;
+}
+
+.panel {
+    background: #FFF;
+}
+
+section > .title {
+    height: 40px;
+    border-bottom: 4px dotted #AAA;
+    padding: 7px 10px;
+}
+
+.summary .title {
+    border-bottom-color: #FFF;
+}
+
+.title-tweets {
+    border-top: 4px solid #42AFF2;
+    padding-top: 3px;
+}
+
+.title-news {
+    border-top: 4px solid #FFDD00;
+    padding-top: 3px;
+}
+
+/*   BLOCK: OVERALL MENTION   */
+
+.block-om-current {
+    font-size: 80px;
+    font-weight: 500;
+    line-height: 140px;
+    margin-left: 10px;
+}
+
+.block-om-current .unit {
+    font-size: 40px;
+}
+
+.block-om-previous-row {
+    background-color: #47A4DD;
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    bottom: 0;
+    overflow: hidden;
+}
+
+.block-om-previous-container {
+    position: absolute;
+    left: 10px;
+    top: 12px;
+}
+
+.block-om-previous-container .title {
+    font-size: 18px;
+    color: #A1D0EC;
+}
+
+.block-om-previous-container .number {
+    font-size: 20px;
+}
+
+.block-om-previous-row-tilt {
+    position: absolute;
+    right: -25px;
+    top: -25px;
+    background-color: #4CACE6;
+    transform: rotate(15deg);
+    width: 180px;
+    height: 150px;
+}
+
+.block-om-previous-delta-container {
+    position: absolute;
+    right: 0;
+    top: 22px;
+    background-color: #26333B;
+    font-size: 20px;
+    height: 40px;
+}
+
+.block-om-previous-delta-container .delta {
+    display: inline-block;
+    position: relative;
+    top: -3px;
+    margin-left: 10px;
+    margin-right: 10px;
+    line-height: 30px;
+}
+
+.block-om-previous-delta-container .arrow {
+    display: inline-block;
+    text-align: center;
+    font-size: 28px;
+    width: 20px;
+    height: 100%;
+    background-color: #7ED320;
+}
+
+/*    BLOCK: CHANNEL IMPACT     */
+
+#impact-graph {
+    width: 100%;
+    height: calc(100% - 40px);
+}
