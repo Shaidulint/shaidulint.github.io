@@ -187,7 +187,15 @@ function GraphTrendline(Paper, XAxisTitle, XAxisPoints, YAxisPoints, Lines) {
 }
 
 function GraphMap(Paper) {
-    Snap.load("worldmap.svg", function (f) {
-        Paper.append(f);
+    Snap.load("http://shaidulint.github.io/Day_21_Dashboard/content/worldmap.svg", function (f) {
+        var g = f.select('g');
+        Paper.append(g);
+        var scaleCountX =  Paper.node.getBoundingClientRect().width / g.getBBox().width;
+        var scaleCountY =  Paper.node.getBoundingClientRect().height / g.getBBox().height;
+        var scaleCount = Math.min(scaleCountX, scaleCountY);
+        var translateX = (Paper.node.getBoundingClientRect().width / 2) - (g.getBBox().width / 2) * scaleCount;
+        var translateY = (Paper.node.getBoundingClientRect().height / 2) - (g.getBBox().height / 2) * scaleCount;
+        g.transform('scale(' + scaleCount + ') translate(' + translateX + ', ' + translateY + ')');
+        var i = 15 + 15;
     });
 }
