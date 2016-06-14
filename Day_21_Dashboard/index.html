@@ -5,41 +5,44 @@
         <title></title>
         <link rel="stylesheet" href="styles.css">
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.4.1/snap.svg-min.js"></script>
+        <script type="text/javascript" src="graphs.js"></script>
         <script type="text/javascript" src="scripts.js"></script>
     </head>
     <body>
         <header>
         </header>
         <main>
-            <section class="small-1 summary">
-                <div class="title">OVERALL MENTIONS</div>
-                <span class="block-om-current">102,2<span class="unit">M</span></span>
-                <div class="block-om-previous-row">
-                    <div class="block-om-previous-container">
-                        <span class="title">vs. previous 7 Days</span><br>
-                        <span class="number">1,853.672</span>
+            <section class="pane pane_small-1 pane_summary">
+                <div class="pane__title">OVERALL MENTIONS</div>
+                <span class="main-number">102,2<span class="main-number__unit">M</span></span>
+                <div class="info-row">
+                    <div class="info-row__previous-container">
+                        <span class="info-row__text">vs. previous 7 Days</span><br>
+                        <span class="info-row__number">1,853.672</span>
                     </div>
-                    <div class="block-om-previous-row-tilt"></div>
-                    <div class="block-om-previous-delta-container">
-                        <span class="delta">+39%</span><span class="arrow">&#8593</span>
+                    <div class="info-row__tilt"></div>
+                    <div class="info-row__delta-container">
+                        <span class="info-row__delta-number">+39%</span><span class="info-row__delta-sign">&#8593</span>
                     </div>
                 </div>
             </section>
-            <section class="small-1">
-                <div class="title">TRENDLINE</div>
+            <section class="pane pane_small-1">
+                <div class="pane__title">TRENDLINE</div>
+                <svg id="trendline-graph"></svg>
             </section>
-            <section class="small-2">
-                <div class="title">CHANNEL IMPACT</div>
+            <section class="pane pane_small-2">
+                <div class="pane__title">CHANNEL IMPACT</div>
                 <svg id="impact-graph"></svg>
             </section>
-            <section class="big-2">
-                <div class="title">GLOBAL CONVERSATION</div>
+            <section class="pane pane_big-2">
+                <div class="pane__title">GLOBAL CONVERSATION</div>
+                <svg id="map-graph"></svg>
             </section>
-            <section class="big-1 panel">
-                <div class="title title-tweets">POPULAR TWEETS</div>
+            <section class="pane pane_big-1 pane_text">
+                <div class="pane__title pane__title_tweets">POPULAR TWEETS</div>
             </section>
-            <section class="big-1 panel">
-                <div class="title title-news">POPULAR NEWS</div>
+            <section class="pane pane_big-1 pane_text">
+                <div class="pane__title pane__title_news">POPULAR NEWS</div>
             </section>
         </main>
         <footer>

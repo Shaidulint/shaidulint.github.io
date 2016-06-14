@@ -26,7 +26,7 @@ main {
     margin: 0 30px;
 }
 
-section {
+.pane {
     position: relative;
     float: left;
     margin: 10px;
@@ -34,69 +34,69 @@ section {
     border-radius: 2px;
 }
 
-section.small-1 {
+.pane.pane_small-1 {
     width: calc(25% - 20px);
     height: calc(34% - 20px);
 }
 
-section.small-2 {
+.pane.pane_small-2 {
     width: calc(50% - 20px);
     height: calc(34% - 20px);
 }
 
-section.big-1 {
+.pane.pane_big-1 {
     width: calc(25% - 20px);
     height: calc(66% - 20px);
 }
 
-section.big-2 {
+.pane.pane_big-2 {
     width: calc(50% - 20px);
     height: calc(66% - 20px);
 }
 
-.summary {
+.pane_summary {
     background: #51B5F3;
     color: #FFF;
 }
 
-.panel {
+.pane_text {
     background: #FFF;
 }
 
-section > .title {
+.pane__title {
     height: 40px;
     border-bottom: 4px dotted #AAA;
     padding: 7px 10px;
 }
 
-.summary .title {
+.pane_summary .pane__title {
     border-bottom-color: #FFF;
 }
 
-.title-tweets {
+.pane__title_tweets {
     border-top: 4px solid #42AFF2;
     padding-top: 3px;
 }
 
-.title-news {
+.pane__title_news {
     border-top: 4px solid #FFDD00;
     padding-top: 3px;
 }
 
 /*   BLOCK: OVERALL MENTION   */
 
-.block-om-current {
+.main-number {
     font-size: 80px;
     font-weight: 500;
     line-height: 140px;
     margin-left: 10px;
 }
 
-.block-om-current .unit {
+.main-number__unit {
     font-size: 40px;
 }
 
-.block-om-previous-row {
+.info-row {
     background-color: #47A4DD;
     width: 100%;
     height: 80px;
@@ -105,22 +105,22 @@ section > .title {
     overflow: hidden;
 }
 
-.block-om-previous-container {
+.info-row__previous-container {
     position: absolute;
     left: 10px;
     top: 12px;
 }
 
-.block-om-previous-container .title {
+.info-row__text {
     font-size: 18px;
     color: #A1D0EC;
 }
 
-.block-om-previous-container .number {
+.info-row__number {
     font-size: 20px;
 }
 
-.block-om-previous-row-tilt {
+.info-row__tilt {
     position: absolute;
     right: -25px;
     top: -25px;
@@ -130,7 +130,7 @@ section > .title {
     height: 150px;
 }
 
-.block-om-previous-delta-container {
+.info-row__delta-container {
     position: absolute;
     right: 0;
     top: 22px;
@@ -139,7 +139,7 @@ section > .title {
     height: 40px;
 }
 
-.block-om-previous-delta-container .delta {
+.info-row__delta-number {
     display: inline-block;
     position: relative;
     top: -3px;
@@ -148,7 +148,7 @@ section > .title {
     line-height: 30px;
 }
 
-.block-om-previous-delta-container .arrow {
+.info-row__delta-sign {
     display: inline-block;
     text-align: center;
     font-size: 28px;
@@ -160,6 +160,20 @@ section > .title {
 /*    BLOCK: CHANNEL IMPACT     */
 
 #impact-graph {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+/*      BLOCK:TRENDLINE    */
+
+#trendline-graph {
+    width: 100%;
+    height: calc(100% - 40px);
+}
+
+/*   BLOCK: GLOBAL CONVERSATIONS   */
+
+#map-graph {
     width: 100%;
     height: calc(100% - 40px);
 }
