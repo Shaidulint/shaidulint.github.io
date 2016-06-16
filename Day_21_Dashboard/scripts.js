@@ -44,7 +44,7 @@ function ready(){
     );
 
     var graph_map = Snap('#map-graph');
-    var g_map = GraphMap(graph_map); 
+    var g_map = new GraphMap(graph_map); 
 }
 
 
