@@ -44,7 +44,24 @@ function ready(){
     );
 
     var graph_map = Snap('#map-graph');
-    var g_map = new GraphMap(graph_map); 
+    var g_map = new GraphMap(graph_map);
+
+    setInterval(function(){
+        var queue = document.getElementsByClassName('footer__queue');
+        if (queue.length > 0) {
+            queue = queue[0];
+            var firstHashtag = queue.children[0];
+            //if (firstHashtag.className.indexOf('anim-drop') > 0) {
+            if (firstHashtag.style.marginLeft.indexOf('px') > 0) { //className.indexOf('anim-drop') > 0) {
+                queue.appendChild(firstHashtag);
+                //firstHashtag.className = 'footer__hashtag';
+                firstHashtag.style.marginLeft = '';
+            }
+            //queue.children[0].className += ' anim-drop';
+            var width = queue.children[0].offsetWidth;
+            queue.children[0].style="margin-left: -" + width + "px;";
+        }
+    }, 5000);
 }
 
 

@@ -16,11 +16,6 @@ header {
 
 }
 
-footer {
-    height: 40px;
-    
-}
-
 main {
     height: calc(100% - 110px);
     margin: 0 30px;
@@ -67,6 +62,11 @@ main {
     height: 40px;
     border-bottom: 4px dotted #AAA;
     padding: 7px 10px;
+}
+
+.pane__content {
+    height: calc(100% - 40px);
+    width: 100%;
 }
 
 .pane_summary .pane__title {
@@ -180,4 +180,238 @@ main {
 
 .land {
     fill: #DADAD8
+}
+
+/*      BLOCK: POPULAR TWEETS       */
+
+.pane_text > .pane__content {
+    overflow: auto;
+}
+
+.tweet {
+    border-bottom: 2px dotted #ddd;
+}
+
+.pane__content > .tweet:last-child {
+    border-bottom: 0;
+}
+
+.tweet__title {
+    height: 60px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.tweet__logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    float: left;
+}
+
+.tweet__author {
+    float: left;
+    margin-left: 10px;
+}
+
+.tweet_username {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+}
+
+.tweet__userinfo {
+    display: inline-block;
+    width: 100%;
+    color: #aaa;
+    font-size: .9em;
+}
+
+.tweet__btn-goto {
+    float: right;
+    height: 100%;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url(content/UI_arrow_right.png);
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.tweet__title:hover .tweet__btn-goto {
+    background-color: #ddd;
+}
+
+.tweet__content {
+    padding: 10px 30px 20px 12px;
+    font-size: .9em;
+}
+
+.tweet__actions {
+    height: 30px;
+    background-color: #F5F5F3;
+    padding: 4.5px 0 4.5px 12px;
+}
+
+.tweet_action {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-left: 22px;
+    padding-right: 2px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.tweet_action:hover {
+    background-color: #aaa;
+
+}
+
+.tweet_action.retweet {
+    background-image: url(content/UI_retweet.png);
+}
+
+.tweet_action.reply {
+    background-image: url(content/UI_reply.png);
+    margin-left: 10px;
+}
+
+.tweet_action.like {
+    background-image: url(content/UI_star.png);
+    margin-left: 10px;
+}
+
+/*  BLOCK: POPULAR NEWS    */
+.news {
+    border-bottom: 2px dotted #ddd;
+}
+
+.pane__content > .news:last-child {
+    border-bottom: 0;
+}
+
+.news__title {
+    height: 60px;
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.news__logo {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 50%;
+}
+.news__info {
+    float: left;
+    margin-left: 10px;
+}
+
+.news__source {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+}
+
+.news__date {
+    display: inline-block;
+    width: 100%;
+    color: #aaa;
+    font-size: .9em;
+}
+
+.news__btn-goto {
+    float: right;
+    height: 100%;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    background-image: url(content/UI_arrow_right.png);
+    background-size: contain;
+    border-radius: 50%;
+}
+
+.news__title:hover > .news__btn-goto {
+    background-color: #ddd;
+}
+
+.news__content {
+    padding: 10px 10px 10px 12px;
+}
+
+.news__caption {
+    display: inline-block;
+    width: 100%;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.news__pic {
+    float: left;
+    width: 40%;
+    margin-right: 10px;
+}
+
+.news__text {
+    margin: 0;
+}
+
+/*   FOOTER   */
+
+footer {
+    background-color: #3C474D;
+    height: 40px;
+    font-size: 0.8em;
+    overflow: hidden;
+    position: relative;
+}
+
+.footer__title {
+    position: absolute;
+    width: 150px;
+    background-color: #1A2127;
+    color: #EEE;
+    height: 100%;
+    text-align: right;
+    padding-right: 10px;
+    padding-top: 2px;
+    left: 0;
+}
+
+.footer__queue {
+    margin-left: 150px; 
+    /*width: calc(100% - 150px);*/
+    width: 150%;
+    height: 100%;
+    color: #EEE;
+    font-size: 1.2em;
+    vertical-align: top;
+}
+
+.footer__hashtag {
+    display: inline-block;
+    height: 100%;
+    text-transform: uppercase;
+    line-height: 2.5em;
+    margin-left: 15px;
+    transition: 1s;
+}
+.footer__hashtag > a {
+    color: #EEE;
+    text-decoration: none;
+}
+
+.footer__hashtag > a:hover {
+    text-decoration: underline;
+}
+
+.footer__hashtag:after {
+    content: "\2022\2022\2022";
+    color: #888;
+    margin-left: 15px;
+}
+
+.footer__hashtag.anim-drop {
+    
 }
