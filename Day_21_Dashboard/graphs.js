@@ -51,7 +51,7 @@ function Centerized(Element, X, Y) {
 }
 
 /** Рисует круглый граф */
-function GraphDonut(X, Y, R, Paper, Percent, OuterColor, InnerColor, ImageUrl, SecondText) {
+function GraphOneDonut(X, Y, R, Paper, Percent, OuterColor, InnerColor, ImageUrl, SecondText) {
     var thicknessOuter = 10;
     var thicknessInner = 4;
     if (Percent < 100) {
@@ -109,6 +109,90 @@ function GraphDonut(X, Y, R, Paper, Percent, OuterColor, InnerColor, ImageUrl, S
         fill: "#73746E"
     });
     Centerized(secondText, X, Y + 50);
+
+    this.Replace = function(X, Y, Radius) {
+        if (Percent < 100) {
+            backgroundOuterCircle.attr({
+                cx: X,
+                cy: Y,
+                r: Radius - thicknessOuter/2
+            });
+            backgroundInnerCircle.attr({
+                cx: X,
+                cy: Y,
+                r: Radius - thicknessOuter - thicknessInner/2 + 1
+            });
+            if (Percent > 0) {
+                var outerArcPath = GetStringDonut(X, Y, Radius, thicknessOuter, 0, Percent * 3.6);
+                outerArc.attr({
+                    d: outerArcPath
+                })
+                var innerArcPath = GetStringDonut(X, Y, Radius - thicknessOuter + 1, thicknessInner, 0, Percent * 3.6);
+                innerArc.attr({
+                    d: innerArcPath
+                });
+            }
+
+        } else {
+            outerCircle.attr({
+                cx: X,
+                cy: Y,
+                r: Radius - thicknessOuter/2
+            });
+            innerCircle.attr({
+                cx: X,
+                cy: Y,
+                r: Radius - thicknessOuter - thicknessInner/2 + 1
+            });
+        }
+        if (Radius > 60) {
+            Centerized(icon, X, Y - 30);
+            summaryText.attr({
+                style: "font-size: 40px; font-weight: 500;"
+            });
+            st_unit.attr({
+                style: "font-size: 20px;"
+            });
+            Centerized(summaryText, X, Y + 45);
+            secondText.attr({
+                style: "font-size: 16px;"
+            });
+            Centerized(secondText, X, Y + 50);
+        } else {
+            Centerized(icon, X, Y - 15);
+            summaryText.attr({
+                style: "font-size: 20px; font-weight: 500;"
+            });
+            st_unit.attr({
+                style: "font-size: 16px;"
+            });
+            Centerized(summaryText, X, Y + 30);
+            secondText.attr({
+                style: "font-size: 16px;"
+            });
+            Centerized(secondText, X, Y + 40);
+        }
+    }
+}
+
+function GraphFiveDonuts(Paper, Donuts) {
+    var paperRect = Paper.node.getBoundingClientRect();
+    var circleDistance = paperRect.width / Donuts.length;
+    var circleRadius = Math.min(paperRect.height/2, circleDistance/2) - 10;
+    var donuts = [];
+    for(var i = 0, count = Donuts.length; i < count; i++) {
+        var source = Donuts[i];
+        var donut = new GraphOneDonut(circleDistance/2 + circleDistance * i, paperRect.height / 2, circleRadius, Paper, source.Percentage, source.OuterColor, source.InnerColor, source.ImageUrl, source.SecondText);
+        donuts.push(donut);
+    }
+    this.Resize = function() {
+        var paperRect = Paper.node.getBoundingClientRect();
+        var circleDistance = paperRect.width / donuts.length;
+        var circleRadius = Math.min(paperRect.height/2, circleDistance/2) - 10;
+        for(var i = 0, count = donuts.length; i < count; i++) {
+            donuts[i].Replace(circleDistance/2 + circleDistance * i, paperRect.height / 2, circleRadius);
+        }
+    };
 }
 
 function GraphTrendline(Paper, XAxisTitle, XAxisPoints, YAxisPoints, Lines) {
@@ -172,6 +256,7 @@ function GraphTrendline(Paper, XAxisTitle, XAxisPoints, YAxisPoints, Lines) {
     });
     // Отрисовка линий
     var graphLines = Paper.g();
+    var graphPoints = Paper.g();
     for(var i = 0; i < Lines.length; i++) {
         var line = Lines[i];
         var points = [];
@@ -181,8 +266,59 @@ function GraphTrendline(Paper, XAxisTitle, XAxisPoints, YAxisPoints, Lines) {
         l.attr(line.lineAttributes);
         graphLines.add(l);
         for ( var p = 0; p < points.length; p++) {
-            Paper.circle(points[p].x, points[p].y, 4).attr(line.pointsAttributes);
+            var pg = Paper.circle(points[p].x, points[p].y, 4).attr(line.pointsAttributes);
+            graphPoints.add(pg);
         }
+    }
+
+    this.Resize = function() {
+        var paperRect = Paper.node.getBoundingClientRect();
+        var graphBox = {
+            left: padding + 40,
+            right: paperRect.width - padding,
+            top: padding + 10,
+            bottom: paperRect.height - padding - 30
+        };
+        //  Нижняя ось
+        XAxisLine.attr({ d: GetStringLine(padding, graphBox.bottom, graphBox.right, graphBox.bottom) });
+
+        vLinesOffset = (graphBox.bottom - graphBox.top) / (YAxisPoints.length - 1);
+        hLinesOffset = ((graphBox.right - 20) - (graphBox.left + 20)) / (XAxisPoints.length - 1);
+        //  Горизонтальные линии и подписи к ним слева
+        for (var i = 0, count =  YAxisPoints.length - 1; i < count; i++) {
+            horizontalLines[i].attr({
+                d: GetStringLine(graphBox.left, graphBox.top + i * vLinesOffset, graphBox.right, graphBox.top + i * vLinesOffset)
+            });
+            Centerized(horizontalCaptions[i], graphBox.left - 15, graphBox.top + i * vLinesOffset + 15);
+        }
+        //  Подпись снизу слева
+        Centerized(XAxisCaption, graphBox.left - 15, graphBox.bottom + 24); 
+
+        //  Подписи снизу
+        for(var i = 0, count = verticalCaptions.node.childNodes.length; i < count; i++) {
+            Centerized(verticalCaptions[i], graphBox.left + 20 + i * hLinesOffset, graphBox.bottom + 25);
+        }
+
+        transformPosition = function(X, Y) {
+            var result = {x: 0, y: 0 };
+            result.x = graphBox.left + 20 + X * hLinesOffset;
+            result.y = graphBox.bottom - ((graphBox.bottom - graphBox.top) / (YAxisPoints[YAxisPoints.length - 1] - YAxisPoints[0]) * Y);
+            return result;
+        }
+        //  Сами линии графика
+        graphPoints.clear();
+        for (var i = 0, count = graphLines.node.childNodes.length; i < count; i++) {
+            var line = Lines[i];
+            var points = [];
+            for ( var p = 0; p < line.points.length; p++)
+                points.push(transformPosition(p, line.points[p]));
+            graphLines[i].attr({d: GetStringMultiline(points)});
+            for ( var p = 0; p < points.length; p++) {
+                var pg = Paper.circle(points[p].x, points[p].y, 4).attr(line.pointsAttributes);
+                graphPoints.add(pg);
+            }
+        }
+
     }
 }
 
