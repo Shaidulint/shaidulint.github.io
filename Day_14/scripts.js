@@ -224,22 +224,18 @@ window.onload = function(){
     var stepsFirst = SortArrayGetSteps(arr.slice());  
     var stepsSecond = SortBubblesGetSteps(arr.slice());
     var stepsThree = SortQuickGetSteps(arr.slice());
-    var stepsFour = SortInsertsGetSteps(arr.slice());
 
     var paper = Snap('#cvs');
     
     var rectsFirst = FirstDrawArray(paper, arr, 100);
     var rectsSecond = FirstDrawArray(paper, arr, 200);
     var rectsThree = FirstDrawArray(paper, arr, 300);
-    var rectsFour = FirstDrawArray(paper, arr, 400);
     
     DrawTitleAndCountSteps(paper, 100, "Простая сортировка", stepsFirst.length);
     DrawTitleAndCountSteps(paper, 200, "Cортировка пузырьком", stepsSecond.length);
     DrawTitleAndCountSteps(paper, 300, "Быстрая сортировка", stepsThree.length);
-    DrawTitleAndCountSteps(paper, 400, "Сортировка вставками", stepsFour.length);
     
     AnimationSorting(rectsFirst, stepsFirst);
     AnimationSorting(rectsSecond, stepsSecond);
     AnimationSorting(rectsThree, stepsThree);
-    AnimationSorting(rectsFour, stepsFour);
 }

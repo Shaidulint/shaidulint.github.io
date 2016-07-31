@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+
+}
+
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #111;
+}
+
+h1 {
+    font-size: 1.6em;
+}
+
+.main-layout {
+    position: relative;
+    width: 760px;
+    margin: 0 auto;
+    background-color: #F7F7F7;
+    padding: 15px 20px;
+    border-radius: 0 0 10px 10px;
+}
+
+.experiments {
+    list-style-type: decimal-leading-zero;
+    padding-left: 33px;
+    margin-top: 10px;
+    line-height: 1.4em;
+}
+
+li {
+
+}
+
+a {
+    
+}
