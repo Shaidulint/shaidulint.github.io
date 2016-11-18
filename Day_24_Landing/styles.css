@@ -1,0 +1,1794 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+}
+
+.content-column {
+    position: relative;
+    width: 1000px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #01162B;
+}
+
+.section-description {
+    line-height: 1.8;
+}
+
+.sprite {
+    background-image: url(content/icons.png);
+    background-repeat: no-repeat;
+    background-size: initial;
+}
+
+/* Вспомогательные */
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-size: initial;
+    background-image: url(content/icons2.png);
+    vertical-align: middle;
+    margin-top: 3px;
+    margin-right: 4px;
+}
+
+.icon-circle {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-image: url(content/icons2.png);
+    background-size: initial;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #DAE1E9;
+}
+
+.icon-map {
+    background-position: -74px -38px;
+}
+
+.icon-phone {
+    background-position: -38px -74px;
+}
+
+.icon-input {
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    background-color: #D9E3ED;
+    background-image: url(content/icons2.png);
+    background-size: initial;
+    background-repeat: no-repeat;
+    border: 2px solid #E4E5E7;
+    border-right: 0;
+}
+
+.icon-person {
+    background-position: -38px -38px;
+}
+
+.icon-mail {
+    background-position: -2px -74px;
+}
+
+.icon-car {
+    background-position: -38px -2px;
+}
+
+.icon-date {
+    background-position: -2px -2px;
+}
+
+.icon-driving {
+    background-position: -74px -2px;
+}
+
+.icon-time {
+    background-position: -2px -38px;
+}
+
+.button-yellow {
+    background-color: #FFEB01;
+    border-radius: 3px;
+    border: 0;
+    border-bottom: 2px solid #F6CB2E;
+    padding: 10px 25px 8px;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.font-yellow {
+    color: #FFEB01;
+}
+
+.link-reset:link {
+    text-decoration: none;
+    color: #000;
+}
+
+.content-hidden > * {
+    display: none;
+}
+
+/*  Carousel */
+
+.carousel {
+    position: relative;
+}
+
+.carousel__scroller {
+    position: absolute;
+    transition: margin-left 1s;
+}
+
+.carousel__item {
+    position: relative;
+    float: left;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+
+
+.carousel__item.hidden {
+    opacity: 0;
+}
+
+/* Photo-Viewer */
+
+.photo-viewer {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+}
+
+.photo-viewer__image {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    vertical-align: middle;
+    width: 400px;
+    height: 300px;
+    max-width: 80%;
+    max-height: 80%;
+    min-width: 200px;
+    min-height: 200px;
+    background-color: #FFF;
+    background-image: url(content/load.gif);
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+
+.photo-viewer__btn {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+.photo-viewer__btn:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.photo-viewer__btn:focus {
+    outline: 0;
+}
+
+.photo-viewer__btn--previous {
+    left: 0;
+    border-radius: 0 10px 10px 0;
+    background-position: -79px -265px;
+}
+
+.photo-viewer__btn--next {
+    right: 0;
+    border-radius: 10px 0 0 10px;
+    background-position: -227px -203px;
+}
+
+.photo-viewer_message {
+    display: none;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+    text-align: center;
+    color: red;
+}
+
+/* Шапка */
+
+.social-line {
+    background-color: #01162B;
+    font-size: .9em;
+}
+
+.social-line__text {
+    color: #AAA;
+    line-height: 2.2em;
+}
+
+.social-line__buttons {
+    display: inline-block;
+    float: right;
+    margin-top: 0.5em;
+}
+
+.social-line__buttons > a {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: 5px;
+}
+
+.social-line__vkontakte {
+    background-position: -31px -79px;
+}
+.social-line__facebook {
+    background-position: -5px -129px;
+}
+.social-line__twitter {
+    background-position: -5px -79px;
+}
+.social-line__instagram {
+    background-position: -207px -129px;
+}
+
+.logo-line {
+
+}
+
+.logo-line__logo {
+    display: inline-block;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.logo-line__logo-image {
+    width: 60px;
+    height: 60px;
+    background-image: url(content/logo.jpg);
+    background-size: cover;
+    float: left;
+}
+
+.logo-line__logo-text {
+    display: inline-block;
+    font-size: 1.3em;
+    font-weight: 700;
+    margin-top: 14px;
+    margin-left: 15px;
+}
+
+.logo-line__contacts {
+    float: right;
+    font-weight: 600;
+    margin-top: 19px;
+    padding-top: 6px;
+}
+
+.logo-line__contacts-address {
+    margin-right: 20px;
+}
+
+.logo-line__contacts-phone {
+    margin-right: 20px;
+}
+
+.logo-line__button-callme {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.menu-line {
+    background-color: #01162B;
+    
+}
+
+.menu-line__menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+}
+
+.menu-line__menu > a > li {
+    float: left;
+    width: 9%;
+    border-left: 1px solid #000;
+    text-align: center;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+
+.menu-line__menu > a > li:last-child {
+    border-right: 1px solid #000;
+}
+
+.menu-line__menu > a:link {
+    text-decoration: none;
+    color: #FFF;
+}
+
+.menu-line__menu > a:visited {
+    color: #FFF;
+}
+
+
+.menu-line__menu > a > li.active {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #FFEB01;
+}
+
+.menu-line__menu > a > li:hover {
+    padding-bottom: 10px;
+    border-bottom: 2px solid #F6CB2E;
+}
+
+/*  Форма поиска курсов вождения    */
+
+.find-courses {
+    position: relative;
+    background-image: url(content/image_1.jpg);
+    background-position: center;
+    height: 560px;
+    border-bottom: 2px solid #FFEB01;
+}
+
+.find-courses__glass {
+    position: absolute;
+    height: 80px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.find-courses > .content-column {
+    height: 100%;
+}
+
+.find-courses__form {
+    position: absolute;
+    width: 360px;
+    height: 100%;
+    right: 0;
+    background-color: #FFF;
+    padding: 20px 30px;
+}
+
+.find-courses__form:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    left: 0;
+    bottom: -20px;
+    border-right: 180px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-top: 10px solid #FFF;
+    border-left: 180px solid #FFF;
+}
+
+.find-courses__title {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+
+.find-courses__title-yellow {
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+    background-color: #FFEB01;
+    margin-left: 5px;
+}
+
+.find-courses__title-yellow:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: -10px;
+    border-left: 5px solid transparent;
+    border-right: 5px solid #FFEB01;
+    border-top: 0.65em solid transparent;
+    border-bottom: 0.7em solid #FFEB01;
+}
+
+.find-courses__title-yellow:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    right: -10px;
+    border-left: 5px solid #FFEB01;
+    border-right: 5px solid transparent;
+    border-top: 0.65em solid #FFEB01;
+    border-bottom: 0.7em solid transparent;
+}
+
+.find-courses__subtitle {
+
+}
+
+.find-courses__input, .map__form-input {
+    width: calc(100% - 36px);
+    height: 36px;
+    vertical-align: top;
+    border: 2px solid #E4E5E7;
+    border-left: 0;
+    padding-left: 16px;
+    font-size: 0.86em;
+    font-family: monospace;
+    margin-bottom: 16px;
+}
+
+select.find-courses__input {
+    margin-left: -4px;
+}
+
+.find-courses__column {
+    display: inline-block;
+    width: calc(50% - 8px);
+    margin-right: 16px;
+    float: left;
+}
+
+.find-courses__column--second {
+    margin-right: 0;
+}
+
+.find-courses__button-submit {
+    width: 100%;
+}
+
+.find-courses__info {
+    background-image: url(content/Info_50px.png);
+    background-repeat: no-repeat;
+    background-size: 32px 32px;
+    background-position-y: center;
+    background-position-x: left;
+
+    padding: 0;
+    padding-left: 48px;
+}
+
+.find-courses__car-type {
+    float: left;
+    width: 180px;
+    height: 80px;
+    padding: 18px 10px 10px 62px;
+
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    background-size: 40px;
+    border-right: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.find-courses__car-type:first-child {
+    border-left: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.find-courses__car-type--car {
+    background-image: url(content/Car_50px_1.png);
+}
+
+.find-courses__car-type--track {
+    background-image: url(content/Interstate_Truck_50px_1.png);
+}
+
+.find-courses__car-type--bus {
+    background-image: url(content/Bus_50px_1.png);
+}
+
+.find-courses__car-type--active {
+    background-color: #FFEB01;
+    border: none;
+}
+
+.find-courses__car-type--car.find-courses__car-type--active {
+    background-image: url(content/Car_50px_2.png);
+}
+
+.find-courses__car-type--track.find-courses__car-type--active {
+    background-image: url(content/Interstate_Truck_50px_2.png);
+}
+
+.find-courses__car-type--bus.find-courses__car-type--active {
+    background-image: url(content/Bus_50px_2.png);
+}
+
+
+.find-courses__car-type-title {
+    margin: 0 0 10px;
+    color: #FFEB01;
+    font-size: 0.9em;
+}
+
+.find-courses__car-type--active > .find-courses__car-type-title {
+    color: #011B34;
+}
+
+.find-courses__car-type-text {
+    margin: 0;
+    color: #FFF;
+    font-size: 0.9em;
+
+}
+
+.find-courses__car-type--active > .find-courses__car-type-text {
+    color: #011B34;
+}
+
+/*   Секция features   */
+
+.features {
+    height: 300px;
+    background-color: #011B34;
+    padding-top: 60px;
+}
+
+.features__title {
+    color: #FFF;
+    margin-top: 0;
+}
+
+.features__feature {
+    float: left;
+    width: 33.3%;
+    color: #FFF;
+    padding: 0px 40px 0px 70px;
+
+    background-repeat: no-repeat;
+    background-size: 50px;
+}
+
+.features__feature--instructors {
+    background-image: url(content/Manager_100px.png);
+}
+.features__feature--video {
+    background-image: url("content/Video Call_100px.png");
+}
+.features__feature--safety {
+    background-image: url(content/Speedometer_100px.png);
+}
+
+.features__feature-title {
+    font-weight: 600;
+}
+
+.features__feature-description {
+    color: #AAA;
+}
+
+.features__link {
+    font-weight: 500;
+    color: #FFF;
+}
+
+.features__link:after {
+    content: "";
+    display: inline-block;
+    height: 1.4em;
+    width: 1em;
+    background-image: url("content/Forward_64px.png");
+    background-size: 1.4em;
+    vertical-align: middle;
+
+    margin-left:12px;
+    margin-top:-2px;
+}
+
+/*  Секция About US    */
+
+.about-us {
+    background-image: url("content/image_2.jpg");
+    background-position: center;
+    height: 500px;
+}
+
+.about-us__text-container {
+    width: 600px;
+    background-color: #FFF;
+    padding: 30px 50px;
+    background-image: url(content/Big_Car_512px.png);
+    background-repeat: no-repeat;
+    background-position-x: 300px;
+    background-position-y: 200px;
+}
+
+.about-us__text-container:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 300px solid #FFF;
+    border-top: 5px solid transparent;
+    border-left: 300px solid transparent;
+    border-bottom: 5px solid #FFF;
+}
+
+.about-us__text-container:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 0;
+    height: 0;
+    border-right: 300px solid transparent;
+    border-top: 5px solid #FFF;
+    border-left: 300px solid #FFF;
+    border-bottom: 5px solid transparent;
+}
+
+.about-us__title {
+    color: #011B34;
+}
+
+.about-us__text {
+    white-space: pre-line;
+    margin: 0 0 40px 0;
+    color: #545656;
+}
+
+.about-us__button {
+    margin-bottom: 20px;
+}
+
+/*  Секция Feature Tiles   */
+
+.feature-tiles {
+    background-color: #FFF;
+}
+
+.feature-tiles__tile {
+    position: relative;
+    float: left;
+    width: 25%;
+    height: 300px;
+    border-left: 2px solid #F2F2F2;
+    text-align: center;
+    padding: 40px 10px 0;
+    z-index: 0;
+}
+
+.feature-tiles__tile:last-child {
+    border-right: 2px solid #F2F2F2;
+}
+
+.feature-tiles__tile--grey {
+    background-color: #F6F7FB;
+}
+
+.feature-tiles__tiles-separator {
+    margin: 0;
+    width: 100%;
+    border: 0;
+    border-bottom: 2px solid #F2F2F2;
+}
+
+.feature-tiles__yellow-line {
+    position: absolute;
+    width: 70%;
+    top: 70px;
+    margin: 0;
+    border: 0;
+    border-top: 3px solid #FFEB01;
+    z-index: -1;
+    left: 50%;
+    margin-left: -35%;
+}
+
+.feature-tiles__icon {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-color: #FFF;
+}
+
+.feature-tiles__tile--grey > .feature-tiles__icon {
+    background-color: #F6F7FB;
+}
+
+
+.feature-tiles__icon--best {
+    background-position: -5px -5px;
+}
+
+.feature-tiles__icon--timer {
+    background-position: -323px -275px;
+}
+
+.feature-tiles__icon--all-ages {
+    background-position: -31px -129px;
+}
+
+.feature-tiles__icon--target {
+    background-position: -347px -201px;
+}
+
+.feature-tiles__icon--instructor {
+    background-position: -233px -129px;
+}
+
+.feature-tiles__icon--pedals {
+    background-position: -5px -265px;
+}
+
+.feature-tiles__icon--document {
+    background-position: -257px -55px;
+}
+
+.feature-tiles__icon--sofa {
+    background-position: -331px -5px;
+}
+
+.feature-tiles__title {
+    color: #011B34;
+    font-weight: 800;
+}
+
+.feature-tiles__text {
+    color: #545656;
+}
+
+/*  Секция number-tiles    */
+
+.number-tiles {
+    background-color: #011B34;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+.number-tiles__tile {
+    float:left;
+    width: 25%;
+    height: 200px;
+    border-right: 2px dotted #133756;
+    text-align: center;
+    padding-top: 10px;
+}
+
+.number-tiles__tile:last-child {
+    border-right: 0;
+}
+
+.number-tiles__number {
+    color: #FFEB01;
+    font-size: 2em;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.number-tiles__description {
+    color: #FFF;
+    margin-bottom: 20px;
+}
+
+.number-tiles__line {
+    margin-top: 35px;
+    width: 40px;
+    border: 0;
+    border-top: 2px solid #FFEB01;
+}
+
+/*  Секция price-table    */
+
+.price-table {
+    height: 750px;
+    background-image: url(content/image_3.jpg);
+    background-position: center 1000px;
+    overflow: auto;
+    padding-top: 50px;
+}
+
+.price-table__title {
+    color: #011B34;
+}
+
+.price-table__description {
+    color: #545656;
+    margin-bottom: 30px;
+}
+
+.price-table__column {
+    position: relative;
+    width: 300px;
+    float: left;
+    margin-right: 50px;
+    background-color: #FFF;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    margin-top: 30px;
+    z-index: 0;
+    padding: 30px;
+    text-align: center;
+    padding-top: 20px;
+}
+
+
+.price-table__column:last-child {
+    margin-right: 0;
+}
+
+.price-table__column--bestseller {
+    margin-top: 0;
+    border: 4px solid #FFEB01;
+    padding-top: 25px;
+    padding-bottom: 20px;
+}
+
+.price-table__price-line {
+    border: 0;
+    position: absolute;
+    top: 44px;
+    width: calc(100% - 60px);
+    border-top: 3px solid #FFEB01;
+    z-index: -1;
+}
+
+.price-table__column--bestseller > .price-table__price-line {
+    top: 70px;
+}
+
+.price-table__price-number {
+    display: inline-block;
+    width: 130px;
+    font-size: 2.2em;
+    margin-top: 10px;
+    text-align: center;
+    background-color: #FFF;
+    font-weight: 700;
+}
+
+.price-table__column--bestseller > .price-table__price-number {
+    margin-top: 12px;
+}
+
+.price-table__price-name {
+    margin: 12px 0;
+    font-size: 1.1em;
+    color: #545656;
+}
+
+.price-table__list-features {
+    padding: 0;
+    list-style-type: none;
+    color: #545656;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+.price-table__list-features-item {
+    padding: 5px;
+
+}
+
+.price-table__list-features-item:nth-child(odd) {
+    background-color: #F8F9FD;
+}
+
+.price-table__icon-cross {
+    display: inline-block;
+    width: 16px;
+    height: 1em;
+    margin-right: 4px;
+    background-position: -231px -55px;
+}
+
+.price-table__icon-checkmark {
+    display: inline-block;
+    width: 16px;
+    height: 1em;
+    margin-right: 4px;
+    background-position: -79px -55px;
+}
+
+.price-table__bestsellers-title {
+    color: #FFEB01;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.price-table__bestsellers-stars {
+    display: inline-block;
+    margin-top: 20px;
+    color: #FFEB01;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+.price-table__discount-circle {
+    position: absolute;
+    display: block;
+    width: 38px;
+    height: 38px;
+    right: 64px;
+    top: 33px;
+    background-color: #FFEB01;
+    border: 3px solid #FFF;
+    border-radius: 50%;
+
+    font-size: 0.8em;
+    font-weight: 800;
+    padding-top: 8px;
+}
+
+/*  Секция Reviews     */
+
+.reviews {
+    height: 500px;
+    background-color: #F9FAFE;
+    background-image: url(content/two-speech-bubbles.png);
+    background-position: 75% -150px;
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.reviews__title {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.reviews__users {
+    text-align: center;
+}
+
+.reviews__user {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 3px solid #EEE;
+    background-size: cover;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    margin-right: 15px;
+    cursor: pointer;
+}
+
+.reviews__user:last-child {
+    margin-right: 0;
+}
+
+.reviews__user.active {
+    border-color: #F6CB2E;
+}
+
+.reviews__user--user-1 {
+    background-image: url(content/review_user_1.jpg);
+}
+
+.reviews__user--user-2 {
+    background-image: url(content/review_user_2.jpg);
+}
+
+.reviews__user--user-3 {
+    background-image: url(content/review_user_3.jpg);
+}
+
+.reviews__user--user-4 {
+    background-image: url(content/review_user_4.jpg);
+}
+
+.reviews__user--user-5 {
+    background-image: url(content/review_user_5.jpg);
+}
+
+.reviews__boxes-window {
+    margin: 30px auto;
+    width: 800px;
+    height: 240px;
+}
+
+.reviews__boxes-scroller {
+    width: 4000px;
+}
+
+.reviews__box {
+    width: 800px;
+    height: 240px;
+    background-color: #FFF;
+    box-shadow: 0 0 20px rgba(99, 108, 114, 0.3);
+    text-align: center;
+}
+
+.reviews__quote {
+    margin: 2em 120px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #A2A2A2;
+}
+
+.reviews__quote:before {
+    content: "«";
+    display: block;
+    position: absolute;
+    left: 40px;
+    top: -50px;
+    font-size: 7em;
+    font-style: normal;
+    color: #EEE;
+}
+.reviews__quote:after {
+    content: "»";
+    display: block;
+    position: absolute;
+    right: 40px;
+    top: 50px;
+    font-size: 7em;
+    font-style: normal;
+    color: #EEE;
+}
+
+
+.reviews__author {
+    margin-bottom: 8px;
+}
+
+.reviews__stars {
+    color: #F6CB2E;
+    font-size: 1.3em;
+}
+
+/*      Секция: Courses     */
+
+.courses {
+    height: 700px;
+    background-image: url(content/image_4.jpg);
+    background-position: center;
+    box-shadow: inset 0 0 0 500px rgba(16, 40, 64, 0.9);
+    overflow: auto;
+}
+
+.courses__title {
+    margin-top: 70px;
+    color: #D9E3ED;
+}
+
+.courses__description {
+    color: #D9E3ED;
+    margin-bottom: 50px;
+}
+
+.courses__tiles {
+    width: 1050px;
+}
+
+.courses__tile {
+    position: relative;
+    float: left;
+    background-color: #F9FAFE;
+    width: 314px;
+    height: 200px;
+    margin-right: 29px;
+    margin-bottom: 29px;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.6);
+}
+
+
+.courses__course-name {
+    display: table-cell;
+    width: 100%;
+    height: 100px;
+    font-weight: 800;
+    padding: 0 20px 0 85px;
+    line-height: 1.8;
+    vertical-align: middle;
+}
+
+.courses__course-name:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 52px;
+    height: 52px;
+    left: 17px;
+    top: 24px;
+    background-image: url(content/icons.png);
+    background-size: initial;
+}
+
+.courses__course-name--protect:before {
+    background-position: -199px -265px;
+}
+
+.courses__course-name--testing-routes:before {
+    background-position: -137px -265px;
+}
+
+.courses__course-name--fear:before {
+    background-position: -333px -139px;
+}
+
+.courses__course-name--basic:before {
+    background-position: -285px -203px;
+}
+
+.courses__course-name--consultation:before {
+    background-position: -165px -203px;
+}
+
+.courses__course-name--police:before {
+    background-position: -261px -265px;
+}
+
+.courses__course-name--full {
+    height: 200px;
+    padding: 0 20px 0 125px;
+}
+
+.courses__course-name--full:before {
+    top: 70px;
+    left: 52px;
+}
+
+.courses__prices {
+    border-top: 3px solid #EFF3F6;
+    background-color: #F3F7FA;
+    padding-top: 5px;
+}
+
+.courses__price-article {
+    display: block;
+    position: relative;
+    width: 100%;
+    padding: 10px 20px;
+    color: #545656;
+    font-weight: 500;
+}
+
+.courses__price-value {
+    float: right;
+    font-style: normal;
+}
+
+.courses__price-value:before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 155px;
+    height: 10px;
+    left: 95px;
+    top: 10px;
+    border-bottom: 2px solid #DDD;
+}
+
+.courses__tile-hovered {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(10, 34, 58, 0.95);
+    border: 4px solid #FFEB01;
+
+    padding: 20px;
+}
+
+.courses__tile:hover > .courses__tile-hovered {
+    display: block;
+}
+
+.courses__tile-hovered-title {
+    display: block;
+    height: 46px;
+    margin-bottom: 24px;
+    color: #F8F9FD;
+    font-weight: 500;
+    line-height: 1.8;
+}
+
+.courses__tile-hovered-time {
+    display: block;
+    color: #F8F9FD;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.courses__tile-hovered-time:before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-image: url(content/icons.png);
+    background-position: -65px -349px;
+    background-size: initial;
+    position: relative;
+    top: 7px;
+    margin-right: 10px;
+}
+
+.courses__tile-hovered-button {
+    padding: 10px 30px;
+    margin-right: 6px;
+    background-color: #FFEB01;
+    border-radius: 4px;
+    color: #0A223A;
+    font-size: 0.9em;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    
+}
+
+/*  Секция Photo Gallery */
+
+.gallery {
+    height: 650px;
+    overflow: hidden;
+    background-color: #F9FAFE;
+}
+
+.gallery__title {
+    margin-top: 70px;
+    color: #01162B;
+}
+
+.gallery__description {
+    color: #545656;
+    margin-bottom: 30px;
+}
+
+.gallery__buttons {
+    margin-bottom: 20px;
+}
+
+.gallery__button {
+    font-weight: 600;
+    color: #01162B;
+    padding: 6px 15px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 0;
+}
+
+.gallery__button:focus {
+    outline: 0;
+}
+
+.gallery__button.active {
+    background-color: #FFEB01;
+    border-bottom: 2px solid #F6CB2E;
+}
+
+.gallery__boxes-window {
+    height: 348px;
+}
+
+.gallery__boxes-scroller {
+    width: 3000px;
+    height: 348px;
+}
+
+.gallery__box {
+    width: 1000px;
+    height: 348px;
+}
+
+.gallery__preview {
+    float: left;
+    width: 230px;
+    height: 154px;
+    margin: 10px;
+    border-radius: 4px;
+}
+
+/*   Секция Video   */
+
+.video {
+    height: 600px;
+    background-image: url(content/image_5.jpg);
+    background-position: center;
+    overflow: hidden;
+}
+
+.video__container {
+    width: 100%;
+    height: 500px;
+    margin-top: 50px;
+    border: 3px solid #EEE;
+    box-shadow: 0 0 0 1000px  rgba(24, 46, 69, 0.8);
+}
+
+#video {
+    display: none;
+}
+
+.video__cap {
+    width: 100%;
+    height: 100%;
+    padding: 200px 100px 0;
+    text-align: center;
+    background: rgba(24, 46, 69, 0.5);
+    cursor: pointer;
+}
+
+.video_icon-play {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    background-position: -105px -55px;
+}
+
+.video__title {
+    margin: 10px;
+    color: #FFEB01;
+}
+
+.video__title > .text-white {
+    color: #FFF;
+}
+
+.video__description {
+    color: #F2F2F2;
+}
+
+/*  Секция Instructors   */
+
+.instructors {
+    height: 623px;
+    overflow: hidden;
+}
+
+.instructors__title {
+    margin-top: 50px;
+}
+
+.instructors__description {
+    color: #545656;
+}
+
+.instructors__buttons {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.instructors__button {
+    font-weight: 600;
+    color: #01162B;
+    padding: 6px 15px;
+    border-radius: 15px;
+    background-color: transparent;
+    border: 0;
+}
+
+.instructors__button:focus {
+    outline: 0;
+}
+
+.instructors__button.active {
+    background-color: #FFEB01;
+    border-bottom: 2px solid #F6CB2E;
+}
+
+.instructors__boxes-window {
+    height: 400px;
+}
+
+.instructors__boxes-scroller {
+    width: 2000px;
+    height: 400px;
+}
+
+.instructors__box {
+    width: 1000px;
+    height: 400px;
+}
+
+
+.instructors__people {
+    height: 100%;
+    position: relative;
+}
+
+.instructors__man {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transition: 0.25s;
+    
+}
+
+.instructors__man.hidden {
+    opacity: 0;
+}
+
+.instructors__photo {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    height: 100%;
+    bottom: 0;
+    left: 0;
+    margin-right: 30px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
+
+.instructors__photo--first {
+    background-image: url(content/instructors/instructor_1.jpeg);
+}
+
+.instructors__photo--second {
+    background-image: url(content/instructors/instructor_2.jpg);
+}
+
+.instructors__photo--third {
+    background-image: url(content/instructors/instructor_3.jpg);
+}
+
+.instructors__photo--fourth {
+    background-image: url(content/instructors/instructor_4.jpg);
+}
+
+.instructors__photo--fifth {
+    background-image: url(content/instructors/instructor_5.jpg);
+}
+
+.instructors__photo--sixth {
+    background-image: url(content/instructors/instructor_6.jpg);
+}
+
+.instructors__text {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    margin-top: 100px;
+    line-height: 2;
+    color: #545656;
+}
+
+.instructors__text:before {
+    content: "«";
+    display: block;
+    position: absolute;
+    margin-left: -60px;
+    margin-top: -100px;
+    font-size: 7em;
+    font-style: normal;
+    color: #EEE;
+}
+.instructors__text:after {
+    content: "»";
+    display: block;
+    position: absolute;
+    margin-left: 400px;
+    margin-top: -125px;
+    font-size: 7em;
+    font-style: normal;
+    color: #EEE;
+}
+
+.instructors__checkboxes {
+    position: absolute;
+    bottom: 40px;
+    right: 200px;
+}
+
+.instructors__checkbox > i {
+    display: inline-block;
+    width: 64px;
+    height: 64px;
+    margin-right: 8px;
+    border: 4px solid #FFF;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    background-position: center;
+}
+
+.instructors__checkbox > input:checked + i {
+    border: 4px solid #FFEB01;
+}
+
+.instructors__checkbox--first > i {
+    background-image: url(content/instructors/preview/instructor_1.jpg);
+}
+
+.instructors__checkbox--second > i {
+    background-image: url(content/instructors/preview/instructor_2.jpg);
+}
+
+.instructors__checkbox--third > i {
+    background-image: url(content/instructors/preview/instructor_3.jpg);
+}
+
+.instructors__checkbox--fourth > i {
+    background-image: url(content/instructors/preview/instructor_4.jpg);
+}
+
+.instructors__checkbox--fifth > i {
+    background-image: url(content/instructors/preview/instructor_5.jpg);
+}
+
+.instructors__checkbox--sixth > i {
+    background-image: url(content/instructors/preview/instructor_6.jpg);
+}
+
+.instructors__checkbox > input {
+    display: none;
+}
+
+/*  Секция Map    */
+
+.map {
+    position: relative;
+    overflow: hidden;
+    height: 600px;
+}
+
+.map__widget {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.map__overflow {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(1, 27, 52, 0.8);
+    transition: 1s;
+}
+
+.map__overflow:hover {
+    background-color: rgba(1, 27, 52, 0.1);
+}
+
+.map__form {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    right: 0;
+    top: 100px;
+    background-color: #FFF;
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+.map__form-header {
+    width: 100%;
+    background-color: #E4EBF3;
+    padding: 30px 30px 26px;
+}
+
+.map__form-content {
+    width: 100%;
+    padding: 30px;
+}
+
+.map__form-contact {
+    display: inline-block;
+    width: calc(50% - 30px);
+    margin-right: 30px;
+    font-weight: 500;
+    color: #133756;
+}
+
+textarea.map__form-input {
+    width: 100%;
+    height: 97px;
+    padding: 16px;
+    border: 2px solid #E4E5E7;
+    resize: none;
+}
+
+.map__form-submit {
+    width: 100%;
+}
+
+/*  Секция FAQ  */
+
+.faq {
+    height: 400px;
+    overflow: hidden;
+    background-image: url(content/image_6.jpg);
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.faq > .content-column {
+    height: 100%;
+
+}
+
+.faq__title {
+
+}
+
+.faq__questions {
+    width: 500px;
+}
+
+.faq__question-container {
+    margin-bottom: 15px;
+}
+
+.faq__question {
+    font-weight: 500;
+}
+
+.faq__radio {
+    display: none;
+}
+
+.faq__answer {
+    display: none;
+    margin: 6px 0 15px 25px;
+    color: #545656;
+}
+
+.faq__radio:checked + label + .faq__answer {
+    display: block;
+}
+
+.faq__radio:checked + .faq__question {
+    
+}
+
+.faq__question:before {
+    content: "-";
+    color: #133756;
+    font-size: 1.2em;
+    font-weight: 800;
+    margin-right: 18px;
+}
+
+.faq__radio:checked + .faq__question:before {
+    content: "+";
+    margin-right: 13px;
+}
+
+/*  footer   */
+
+.footer-info {
+    background-color: #041E37;
+    color: #A4A8A8;
+}
+
+.footer-info__column {
+    display: inline-block;
+    vertical-align: top;
+    width: 25%;
+    height: 360px;
+    padding: 15px;
+}
+
+.footer-info__title {
+    color: #FFF;
+}
+
+.footer-info__blog {
+
+}
+
+.footer-info__blog-title {
+    color: #FFF;
+}
+
+.footer-info__link {
+    color: #FFF;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.footer-info__link:after {
+    content: "";
+    display: inline-block;
+    height: 1.4em;
+    width: 1em;
+    background-image: url("content/Forward_64px.png");
+    background-size: 1.4em;
+    vertical-align: middle;
+
+    margin-left: 4px;
+    margin-top: -2px;
+}
+
+.footer-info__insta-container {
+
+}
+
+.footer-info__insta-photo {
+    display: inline-block;
+    vertical-align: top;
+    width: 60px;
+    height: 60px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border: 2px solid #274068;
+}
+
+.footer-info__insta-photo:nth-child(3n) {
+    margin-right: 0;
+}
+
+.footer-info__opening-hours-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.footer-info__opening-hours-list-item {
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.footer-info__opening-hours-list-item > hr {
+    position: relative;
+    margin: 0;
+    border: 0;
+    border-bottom: 2px dotted #00162B;
+    top: 12px;
+}
+
+.open-hours__day-week {
+    position: relative;
+    padding-right: 8px;
+    background-color: #041E37;
+}
+
+.open-hours__hours {
+    position: relative;
+    float: right;
+    padding-left: 8px;
+    background-color: #041E37;
+}
+
+.credits {
+    padding: 10px 0;
+    background-color: #00152A;
+    color: #A2A2A2;
+    font-style: italic;
+}
+
+.credits__author {
+    color: #FFF;
+}
