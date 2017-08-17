@@ -1,20 +1,7 @@
-function animate(duration, stepCallback, timingFunc) {
-    var startTime = performance.now();
-    var timingFunction = (timingFunc || animate.tLinear);
+var animate = {},
+    canvas = null,
+    context2d = null;
 
-
-    var step = function(nowTime){
-        var fractionTime = (nowTime - startTime) / duration;
-        if (fractionTime > 1)
-            fractionTime = 1;
-        
-        stepCallback(timingFunction(fractionTime));
-        if (fractionTime < 1)
-            animate.requestFrame(step);
-    };
-
-    animate.requestFrame(step);
-}
 animate.requestFrame = (function(){
     return  window.requestAnimationFrame       || 
             window.webkitRequestAnimationFrame || 
@@ -26,9 +13,30 @@ animate.requestFrame = (function(){
             };
     })().bind(window);
 
-animate.tLinear = function(fraction) {
-    return fraction;
-}
-animate.tQuad = function(fraction) {
-    return Math.pow(fraction, 2);
-}
+
+document.addEventListener('DOMContentLoaded', function() {
+    canvas = document.getElementById('canvas');
+    canvas.width = canvas.parentElement.offsetWidth;
+    canvas.height = canvas.parentElement.offsetHeight;
+
+    context2d = canvas.getContext('2d');
+
+    var bigPixel = context2d.createImageData(2, 2);
+    for(var i = 0, count = bigPixel.data.length; i < count; i += 4) {
+        bigPixel.data[i] = 0;
+        bigPixel.data[i + 1] = 0;
+        bigPixel.data[i + 2] = 0;
+        bigPixel.data[i + 3] = 255;
+    }
+
+    var x = 5.5;
+    var y = 50.5;
+    var draw = function() {
+        context2d.putImageData(bigPixel, x, y);
+        x += 2;
+        y += 2;
+        animate.requestFrame(draw);
+    }
+
+    animate.requestFrame(draw);
+});

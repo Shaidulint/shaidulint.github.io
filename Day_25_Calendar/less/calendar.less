@@ -1,0 +1,234 @@
+@header-bk-color: #F1F5F6;
+@bk-color: #F8FBFB;
+@border-color: #ECF0F1;
+@bk-color-selected: #FFFFFF;
+
+@text-color: #768B94;
+@text-weekend-color: #DE847C;
+@text-color-other-month: tint(@text-color, 40%);
+@text-weekend-color-other-month: tint(@text-weekend-color, 30%);
+
+@icon-task-color: #FF8A80;
+@icon-scheduler-color: #29A89B;
+
+@module: calendar;
+@mdl-popup: calendar-popup;
+
+@font: Verdana, Geneva, Tahoma, sans-serif;
+
+* {
+    box-sizing: border-box;
+}
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.@{module} {
+    background-color: @bk-color;
+    color: @text-color;
+    font-family: @font;
+}
+
+/*  ROWS   */
+
+.@{module}__row {
+    border-bottom: 1px solid @border-color;
+}
+
+.@{module}__row--header {
+    background-color: @header-bk-color;
+}
+
+.@{module}__row-content {
+    height: 100%;
+    margin-left: 50px;
+    margin-right: 50px;
+    border-left: 1px solid @border-color;
+    border-right: 1px solid @border-color;
+}
+
+/*  CELLS   */
+
+.@{module}__cell {
+    float: left;
+    width: 14.28%;
+    height: 100%;
+    padding: 10px;
+    border-right: 1px solid @border-color;
+    transition: box-shadow 0.2s;
+}
+
+.@{module}__cell:last-child {
+    border-right: 0;
+}
+
+.@{module}__cell--header {
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.@{module}__cell--weekend {
+    color: @text-weekend-color;
+}
+
+.@{module}__cell--other-month {
+    color: @text-color-other-month;
+}
+
+.@{module}__cell--weekend.@{module}__cell--other-month {
+    color: @text-weekend-color-other-month;
+}
+
+.@{module}__cell--selected {
+    background-color: @bk-color-selected;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1), 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/*  CELL CONTENT   */
+
+.@{module}__day-of-month {
+    display: inline-block;
+    width: 100%;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.@{module}__icons-line {
+    display: inline-block;
+    width: 100%;
+}
+
+.@{module}__day-info {
+    display: inline-block;
+    width: 100%;
+    font-size: 11pt;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.@{module}__icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    margin-right: 4px;
+}
+
+.@{module}__icon--scheduler {
+    background-color: @icon-scheduler-color;
+}
+
+.@{module}__icon--task {
+    background-color: @icon-task-color;
+}
+
+/*  POPUP    */
+
+@popup-color: #FFF;
+@popup-title-color: #C0C7CA;
+@popup-line-end-color: #9FA7A9;
+@popup-event-border-color: #DEE3E5;
+@popup-time-color: #C5CACC;
+@popup-text-color: #1B3E4D;
+
+.@{mdl-popup} {
+    position: absolute;
+    width: 400px;
+    min-height: 100px;
+    background-color: @popup-color;
+    box-shadow: 0 8px 30px -5px rgba( 0, 0, 0, 0.3);
+    font-family: @font;
+    z-index: 10;
+}
+
+.@{mdl-popup}__title {
+    position: absolute;
+    left: 15px;
+    top: -15px;
+    height: 30px;
+    padding: 5px 20px;
+    background-color: @popup-title-color;
+    color: @popup-color;
+    box-shadow: 0 2px 10px rgba( 0, 0, 0, 0.2);
+    z-index: 11;
+}
+
+
+.@{mdl-popup}__line {
+    position: absolute;
+    display: block;
+    left: 40px;
+    top: 0px;
+    width: 4px;
+    bottom: 40px;
+    background-color: @popup-title-color;
+}
+
+.@{mdl-popup}__line:after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 8px;
+    height: 8px;
+    left: -2px;
+    bottom: -4px;
+    border-radius: 50%;
+    background-color: @popup-line-end-color;
+}
+
+.@{mdl-popup}__content {
+    padding: 30px 0 40px;
+}
+
+/*  POPUP CONTENT   */
+
+.@{mdl-popup}__event-container {
+    position: relative;
+    padding: 0 20px 0 80px;
+    margin-bottom: 20px;
+}
+
+.@{mdl-popup}__event-container:before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: 32px;
+    top: calc(50% - 10px);
+}
+
+.@{mdl-popup}__event-container--scheduler:before {
+    background-color: @icon-scheduler-color;
+}
+
+.@{mdl-popup}__event-container--task:before {
+    background-color: @icon-task-color;
+}
+
+.@{mdl-popup}__event {
+    display: inline-block;
+    padding: 10px;
+    border: 1px solid @popup-event-border-color;
+    border-radius: 2px;
+}
+
+.@{mdl-popup}__event-time {
+    color: @popup-time-color;
+}
+
+.@{mdl-popup}__event-message {
+    margin: 0;
+    margin-top: 6px;
+    color: @popup-text-color;
+}
+
+.@{mdl-popup}__no-event {
+    padding: 0 20px 0 80px;
+    color: @popup-text-color;
+}

@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    min-width: 1000px;
+    background-color: #F6FAFB;
+}
+
+.header {
+    padding: 15px 80px 20px;
+    background-color: #FFF;
+    color: #244453;
+}
+
+.header__day-of-month {
+    font-size: 90pt;
+    font-weight: 100;
+}
+
+.header__day-of-week {
+    font-size: 24pt;
+}
+
+.header__month-and-year {
+    position: relative;
+    top: -10px;
+    font-size: 18pt;
+}
